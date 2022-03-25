@@ -1,0 +1,11 @@
+[Nemo Action]
+Active=true
+Name=Open in vscode
+Comment=Code
+Exec=code .
+Icon-Name=com.visualstudio.code
+Selection=None
+Extensions=any;
+
+# /usr/share/nemo/actions
+

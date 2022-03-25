@@ -1,0 +1,16 @@
+# Golang
+export GOROOT=/usr/lib/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# Symfony
+export PATH=$PATH:$HOME/.symfony/bin
+
+# Laravel
+export PATH=$PATH:$HOME/.config/composer/vendor/bin
+
+# pear and pecl
+# export PATH=$PATH:$HOME/pear/bin
+
+# JAVA
+# export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64/bin/'
