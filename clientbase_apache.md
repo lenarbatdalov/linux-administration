@@ -3,13 +3,13 @@
 cat /etc/httpd/conf/sites-available/distr-ssl.conf
 <VirtualHost *:443>
     DocumentRoot "/srv/http/distr/"
-    ServerName localhost
-    ServerAdmin you@example.com
+    ServerName distr
+    ServerAdmin webmaster@localhost
+
     ErrorLog "/var/log/httpd/distr-ssl-error_log"
     TransferLog "/var/log/httpd/distr-ssl-access_log"
 
     SSLEngine on
-
     SSLCertificateFile "/etc/httpd/conf/ssl/distr.crt"
     SSLCertificateKeyFile "/etc/httpd/conf/ssl/distr.key"
 
@@ -28,8 +28,15 @@ cat /etc/httpd/conf/sites-available/distr-ssl.conf
     CustomLog "/var/log/httpd/ssl_request_log" \
             "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
 
-    <Directory />
+    <Directory "/srv/http/distr/">
+        Options +Indexes +FollowSymLinks +ExecCGI
+        AllowOverride All
+        Order deny,allow
+        Allow from all
+        Require all granted
+    </Directory>
 
+    <Directory "/">
         Options +Indexes +FollowSymLinks +ExecCGI
         AllowOverride All
         Order deny,allow
@@ -48,8 +55,15 @@ cat /etc/httpd/conf/sites-available/distr.conf
     ErrorLog "/var/log/httpd/distr-error_log"
     TransferLog "/var/log/httpd/access_log"
 
+    <Directory "/">
+        Options +Indexes +FollowSymLinks +ExecCGI
+        AllowOverride All
+        Order deny,allow
+        Allow from all
+        Require all granted
+    </Directory>
+
     <Directory "/srv/http/distr/">
-        # Options Indexes FollowSymLinks
         Options +Indexes +FollowSymLinks +ExecCGI
         AllowOverride All
         Order deny,allow

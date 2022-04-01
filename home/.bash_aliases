@@ -2,6 +2,7 @@
 alias h='history'
 alias www='cd /srv/http/'
 alias sopr='source ~/.zshrc' # && source ~/.tmux.conf'
+alias allow='sudo chown -R http:http . && sudo chmod -R g+rw .'
 
 # git
 alias st='git status'

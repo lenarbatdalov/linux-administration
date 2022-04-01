@@ -53,7 +53,7 @@ exit
 https://getcomposer.org/download/
 sudo mv composer.phar /usr/local/bin/composer
 
-wget https://codeload.github.com/xdebug/xdebug/tar.gz/refs/tags/2.9.2
+wget https://codeload.github.com/xdebug/xdebug/tar.gz/refs/tags/2.9.2 -O xdebug-2.9.2.tar.gz
 tar -xzf xdebug-2.9.2.tar.gz
 cd xdebug-2.9.2
 phpize7
