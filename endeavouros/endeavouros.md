@@ -64,6 +64,7 @@ sudo vim /etc/php7/conf.d/xdebug.ini
 zend_extension=xdebug.so
 xdebug.remote_enable = 1
 xdebug.remote_autostart = 1
+;#xdebug.remote_host=host.docker.internal
 xdebug.remote_host=127.0.0.1
 xdebug.remote_port=9000
 xdebug.profiler_enable = 0
