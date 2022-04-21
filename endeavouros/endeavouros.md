@@ -84,3 +84,13 @@ git config --global user.name "Lenar Batdalov"
 git config --global pull.ff only
 git config --global init.defaultBranch master
 ```
+
+# watchdog0 did not stop
+```
+vim /etc/systemd/system.conf
+add
+ShutdownWatchdogSec=10
+
+vim /etc/default/grub
+GRUB_CMDLINE_LINUX="reboot=acpi"
+```
