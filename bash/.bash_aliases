@@ -1,22 +1,8 @@
 # terminal
-alias update='sudo apt update'
-alias upgrade='sudo apt upgrade'
-alias install='sudo apt install'
-alias remove='sudo apt remove'
-alias autoremove='sudo apt autoremove'
-alias autoclean='sudo apt autoclean'
-alias search='apt-cache search'
-alias q='exit'
-alias c='clear'
 alias h='history'
-alias www='cd /var/www/html'
-alias l='ls'
-
-# bash скрипты
-alias bastatus='cd /var/www/html/base && git status'
-alias bapull='cd /var/www/html/base && git pull origin master'
-alias bacommit='cd /var/www/html/base && git commit -m'
-alias bapush='cd /var/www/html/base && git push origin master'
+alias www='cd /srv/http/'
+alias sopr='source ~/.zshrc' # && source ~/.tmux.conf'
+alias allow='sudo chown -R http:http . && sudo chmod -R g+rw .'
 
 # git
 alias st='git status'
@@ -26,6 +12,7 @@ alias pullm='git pull origin master'
 alias push='git push origin'
 alias pushm='git push origin master'
 alias resetfile='git checkout HEAD --'
+alias che='git checkout'
 
 # composer
 alias compi='composer install'
@@ -36,17 +23,26 @@ alias compc='composer create-project'
 # symfony
 alias scliserv='symfony server:start --no-tls'
 
+# laravel
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
 # docker
 alias dcb='docker-compose build'
 alias dcup='docker-compose up -d'
 alias dcd='docker-compose down'
 alias dps='docker ps'
+alias dpsf="docker ps --format 'table {{.Names}}\t{{.Ports}}'"
+alias ctop='docker run --rm -ti -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'
 
 # алиасы на функции, ф-ции смотреть в .bash_functions
 alias dex='dockerExecBash'
+alias desh='dockerExecSh'
 
-alias che='git checkout'
-alias sopr='source ~/.profile'
-alias alist='apt list --upgradable'
-alias hosts="sudo gedit /etc/hosts"
-alias dir-nginx="cd /etc/nginx/"
+# tmux
+alias tx-new='tmux new-session -s losst'
+alias tx-help='
+    echo "Разделение окнана панели:" && \
+    echo "    - по горизонтали Ctrl+b отпустить, затем Shift+\"" && \
+    echo "    - по вертикали Ctrl+b, затем Shift+%" && \
+    echo "Переключение между панелями Ctrl+b и стрелка" && \
+    echo "Размер активной панели можно менять нажав Ctrl+b, потом Ctrl и стрелка"'

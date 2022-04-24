@@ -3,4 +3,5 @@
 	name = Ленар Батдалов
 [safe]
 	directory = /srv/http/distr
+	directory = /srv/http/clientbase/distr
 
