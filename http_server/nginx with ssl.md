@@ -40,7 +40,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/privat
 
 # edit hosts
 ```
-sudo gedit /etc/hosts
+sudo vim /etc/hosts
 127.0.0.1 distr
 ```
 

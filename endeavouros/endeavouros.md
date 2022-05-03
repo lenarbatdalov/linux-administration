@@ -9,6 +9,14 @@ yay -S curl wget mc htop lnav gparted git zim zsh \
     visual-studio-code-bin \
     dropbox
 
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo chsh -s $(which zsh)
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+npm config set prefix ~/.npm
+
 sudo usermod -a -G http $USER
 sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
@@ -83,6 +91,26 @@ git config --global user.email "developer.lenar@gmail.com"
 git config --global user.name "Lenar Batdalov"
 git config --global pull.ff only
 git config --global init.defaultBranch master
+```
+
+# gnome-keyring
+```
+yay -S gnome-keyring
+
+kate /etc/pam.d/login
+auth       optional     pam_gnome_keyring.so
+session    optional     pam_gnome_keyring.so auto_start
+
+kate ~/.zshrc
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+
+gnome-keyring-daemon -r -d
+
+kate /etc/pam.d/passwd
+password	optional	pam_gnome_keyring.so
 ```
 
 # watchdog0 did not stop
