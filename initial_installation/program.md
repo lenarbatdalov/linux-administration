@@ -1,0 +1,55 @@
+# Program
+```zsh
+sudo apt install \
+    curl \
+    wget \
+    mc \
+    htop \
+    lnav \
+    gparted \
+    git \
+    kolourpaint \
+    sqlite \
+    sqlitebrowser
+```
+
+# [Postman](https://learning.postman.com/docs/administration/updating/#downloading-postman-v7)
+```zsh
+cd Downloads
+wget https://go.pstmn.io/dl-linux64-v7-latest -O postman.tar.gz
+
+sudo tar -xzf postman.tar.gz -C /opt
+sudo ln -s /opt/Postman/app/Postman /usr/bin/postman
+
+sudo -s
+cat > /usr/share/applications/postman.desktop <<EOL
+[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Exec=postman
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Development;
+EOL
+```
+
+# Telegram
+```zsh
+cd Downloads
+wget https://telegram.org/dl/desktop/linux -O tsetup.tar.xz
+
+sudo tar xJf tsetup.tar.xz -C /opt/
+sudo ln -s /opt/Telegram/Telegram /usr/local/bin/telegram-desktop
+
+cat > /usr/share/applications/telegram.desktop <<EOL
+[Desktop Entry]
+Encoding=UTF-8
+Name=Telegram
+Exec=telegram-desktop
+Terminal=false
+Type=Application
+Icon=/opt/Telegram/icon.png
+Categories=Network;Internet;
+EOL
+```

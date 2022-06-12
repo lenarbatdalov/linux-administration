@@ -1,3 +1,14 @@
+# Vim
+```zsh
+vim plug
+https://github.com/junegunn/vim-plug
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+### ~/.vimrc
+```
 " Options
 set mouse=a
 set number
@@ -118,3 +129,26 @@ function! OpenTerminal()
   resize 10
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
+```
+
+### ~/.vim/coc-settings.json
+```json
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "json",
+        "javascriptreact",
+        "typescript.tsx"
+    ],
+    "eslint.filetypes": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "javascriptreact",
+        "typescript.tsx"
+    ],
+    "coc.preferences.diagnostic.virtualText": true,
+}
+```
