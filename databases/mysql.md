@@ -9,6 +9,17 @@ FLUSH PRIVILEGES;
 SELECT User, Host, plugin FROM mysql.user;
 ```
 
+# Узнать размер базы
+```sql
+SELECT table_schema AS "database",
+ROUND(SUM(data_length + index_length) / 1024 / 1024 / 1024, 2) AS "Размер в гб"
+-- в мегабайтах ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Размер в мб"
+-- в килобайтах ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Размер в кб"
+FROM information_schema.TABLES
+WHERE table_schema = " {{ DATABASE_NAME }} "
+GROUP BY table_schema;
+```
+
 # create database
 ```
 mysql -u user -p

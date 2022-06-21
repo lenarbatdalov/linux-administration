@@ -7,7 +7,8 @@ yay -S curl wget mc htop lnav gparted git zim zsh \
     nginx mariadb nodejs npm docker docker-compose \
     google-chrome \
     visual-studio-code-bin \
-    dropbox
+    dropbox \
+    mongodb-compass
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo chsh -s $(which zsh)

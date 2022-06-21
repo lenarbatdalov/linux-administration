@@ -8,9 +8,12 @@ sudo apt install \
     lnav \
     gparted \
     git \
+    make \
+    build-essential \
     kolourpaint \
     sqlite \
-    sqlitebrowser
+    sqlitebrowser \
+    mongodb-compass
 ```
 
 # [Postman](https://learning.postman.com/docs/administration/updating/#downloading-postman-v7)
