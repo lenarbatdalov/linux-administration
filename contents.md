@@ -15,4 +15,5 @@
 10. [MariaDB](/installation/10.%20mariadb.md)
 11. [Nginx](/installation/11.%20nginx.md)
 12. [PHP](/installation/12.%20php.md)
-13. [Other](/installation/other.md)
+13. [Tmux](/installation/13.%20tmux.md)
+14. [Other](/installation/other.md)
