@@ -1,3 +1,33 @@
+# gnome-keyring
+```
+yay -S gnome-keyring
+
+kate /etc/pam.d/login
+auth       optional     pam_gnome_keyring.so
+session    optional     pam_gnome_keyring.so auto_start
+
+kate ~/.zshrc
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+
+gnome-keyring-daemon -r -d
+
+kate /etc/pam.d/passwd
+password	optional	pam_gnome_keyring.so
+```
+
+# watchdog0 did not stop
+```
+vim /etc/systemd/system.conf
+add
+ShutdownWatchdogSec=10
+
+vim /etc/default/grub
+GRUB_CMDLINE_LINUX="reboot=acpi"
+```
+
 # Android studio
 ```
 sudo apt-add-repository ppa:maarten-fonville/android-studio
